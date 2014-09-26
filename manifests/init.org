@@ -1,0 +1,13 @@
+# == Class: reg 
+#
+class reg ($names = hiera('keys')) {
+$new_name = $names[01]['name']
+$value = $names[1]['value']
+$test = ['$new_name', '$test']
+    file { "/var/tmp/$test":
+      ensure => present,
+       }
+    file { "/var/tmp/$value":
+      ensure => present,
+       }
+}
